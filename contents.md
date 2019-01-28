@@ -215,7 +215,7 @@ DSPマージンはDspMarginの中でだけ計算される</br>
 
 落札額の単位はSSPによって異なる
 
-CPM, CPI, CPI Micros, etc...
+CPM, CPI, CPM Micros, etc...
 
 ---
 
@@ -245,7 +245,7 @@ case class Price(amount: BigDecimal, unit: PriceUnit) {
    case CpmMicros => Price.cpm(amount / (1000 * 100))
  }
  def cpi: Price = ...
- def cpiMicros: Price = ...
+ def cpmMicros: Price = ...
 
  def +(that: Price): Price = unit match {
    case Cpm       => copy(amount + that.cpm.amount)
@@ -279,6 +279,8 @@ price3 == price4 // => true
 ### まとめ
 
 </br>
+
+金額計算をドメインモデルで実装する例</br>
 
 ドメインモデルをベースにした実装は</br>
 仕様を直接的に表現したものになり,
