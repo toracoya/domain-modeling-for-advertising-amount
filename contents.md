@@ -95,7 +95,7 @@ def cacululate(
 
 ---
 
-### ドメインモデル
+### 金額計算のドメインモデル
 
 <img src="./images/account-model.png" style="border-style: none; width: 110%; height: 110%;" />
 
